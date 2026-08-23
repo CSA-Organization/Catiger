@@ -1,0 +1,17 @@
+.{
+    .name = .Catiger,
+    .version = "0.0.0",
+    .fingerprint = 0x8a42c0b45b0d32ee,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .chameleon = .{
+            .url = "git+https://github.com/tr1ckydev/chameleon#414169dede742d9ac8261d31b9fca6e31a1d7246",
+            .hash = "chameleon-2.0.1-ZOxajZ17AADmYCpHFqqoGfaXQiRkXM8B5lYJfir9tqsz",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "Compiler",
+    },
+}
