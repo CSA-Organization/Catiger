@@ -2,5 +2,5 @@
 
 .zig-cache/
 zig-out/
-zig-pkg/
+zig-pkg/chameleon-2.0.1-ZOxajZ17AADmYCpHFqqoGfaXQiRkXM8B5lYJfir9tqsz/.zig-cache
 *.o

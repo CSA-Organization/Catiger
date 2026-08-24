@@ -1,4 +1,4 @@
-const Standard=@import("std");
+const Standard:type=@import("std");
 
 pub fn build(Build:*Standard.Build)void{
     const Target=Build.standardTargetOptions(.{});
@@ -13,7 +13,7 @@ pub fn build(Build:*Standard.Build)void{
             .target=Target,
             .optimize=Optimization,
             .imports=&.{
-                .{.name="Chemeleon",.module=Chameleon.module("chameleon")}
+                .{.name="Chameleon",.module=Chameleon.module("chameleon")}
             }
             }),
     });

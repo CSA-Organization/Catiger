@@ -1,22 +1,27 @@
 const Standard=@import("std");
-const Chameleon=@import("Chameleon");
+const Output=@import("Output.zig");
 
-pub fn main(Initialization: Standard.process.Init)u8{
+pub fn main(Initialization:Standard.process.Init)u8{
+	const GPA=Initialization.gpa;
+	const IO=Initialization.io;
+
 	const NoColour=Initialization.minimal.environ.getPosix("NO_COLOR");
 	if((Initialization.minimal.environ.getPosix("CLICOLOR_FORCE")!=null)or(NoColour==null or NoColour.?.len==0)){
-		//do something with color
+		Output.WhetherColour=true;
 	}
 	else{
-		//do something with label
+		Output.WhetherColour=false;
 	}
 
+	Output.Initialize(GPA,IO);
+
 	if(Initialization.minimal.args.vector.len==1){
-		return 0;
-	}
-	else{
+		Output.Red("Arguments is only 1 and not enough, try help",.{});
 		return 1;
 	}
-	//const Arguments=try Initialization.minimal.args.toSlice(Initialization.arena.allocator()) catch false;
+	else{
+		return 0;
+	}
 
 	return 0;
 }
