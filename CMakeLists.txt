@@ -3,4 +3,7 @@ project(Catiger)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(Compiler Compiler/Main.cpp)
+add_executable(Compiler Compiler/Main.cpp
+        Compiler/OStream.hpp
+        Compiler/OStream.cpp
+)
