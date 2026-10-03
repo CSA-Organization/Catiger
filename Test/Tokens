@@ -1,0 +1,7 @@
+printf 'abc  \
+ndef'    | ./a.out   #abc, def(abcdef）
+printf 'a b c d
+'     | ./a.out   #
+printf 'a++    b"\"\'      | ./a.
+out   # a, +, +, b
+printf 'abc'     | ./a.out   # abc（EOF flush)
