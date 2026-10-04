@@ -1,0 +1,7 @@
+Linux:Directory Domin
+{
+Public
+    -|
+        Core:Directory Domin;
+    |-
+};

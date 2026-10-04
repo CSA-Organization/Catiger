@@ -1,0 +1,7 @@
+x86_64-v4:Directory Domin
+{
+Public
+    -|
+        ByteArrayOperation:File Domin;
+    |-
+};

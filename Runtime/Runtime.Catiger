@@ -1,0 +1,8 @@
+Runtime:Directory Domin
+{
+Public
+    -|
+        HardWares:Directory Domin;
+        OperationSystem:Directory Domin;
+    |-
+};

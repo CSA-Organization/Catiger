@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 4.3)
-project(Catiger)
+
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+
+project(Catiger LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 26)
 

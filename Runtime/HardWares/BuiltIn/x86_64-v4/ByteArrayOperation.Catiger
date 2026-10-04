@@ -1,0 +1,50 @@
+#[HardWare Intel x86_64-v4]
+
+MemoryError:Enumeration
+{
+    DestinationNullError,
+    SourceNullError
+};
+LogicError:Enumeration
+{
+    DestinationTrampleSourceError,
+    DestinationOnSourceError,
+    Overlap
+};
+
+MemoryCopy:Function(Destination:void[*]Const,Source:void Const[*]Const,Size:unsigned long)Result<OK:void*,ErrorMemory:MemoryError|ErrorLogic:LogicError>
+{
+    If(!Size)
+        Return OK:Destination;
+    If(!Destination)
+        Return ErrorMemory:DestinationNullError;
+    If(!Source)
+        Return ErrorMemory:SourceNullError;
+    If(DirectCast<unsigned long>(Destination)+Size>DirectCast<unsigned long>(Source)&&DirectCast<unsigned long>(Destination)<DirectCast<unsigned long>(Source))
+        Return ErrorLogic:DestinationTrampleSourceError;
+    If(DirectCast<unsigned long>(Source)+Size>DirectCast<unsigned long>(Destination)&&DirectCast<unsigned long>(Source)<DirectCast<unsigned long>(Destination))
+        Return ErrorLogic:DestinationOnSourceError;
+    If(Destination==<Direct>==Source)
+        Return ErrorLogic:Overlap;
+    CompileTime For(n:unsigned unit=9;n>=3;n--)
+        (_,Size)(_,(-(Left%Right),%)2**(n-3))|>(_,(Index${2**n}$,Size));
+    If(Index512)
+    {
+        TheMiddle:ZMultiMedia Register;
+        For(Index:=0;Index<Index512*64;)
+            Destination[Index..Index+64]=TheMiddle=Source[Index..Index+=64];
+    };
+    If(Index256)
+        Destination[Index..Index+32]=TheMiddle:YMultiMedia Register=Source[Index..Index+=32];
+    If(Index128)
+        Destination[Index..Index+16]=TheMiddle:XMultiMedia Register=Source[Index..Index+=16];
+    If(Index64)
+        Destination[Index..Index+8]=TheMiddle:LongWord Register=Source[Index..Index+=8];
+    If(Index32)
+        Destination[Index..Index+4]=TheMiddle:DoubleWord Register=Source[Index..Index+=4];
+    If(Index16)
+        Destination[Index..Index+2]=TheMiddle:Word Register=Source[Index..Index+=2];
+    If(Index8)
+        Destination[Index..Index+1]=TheMiddle:Byte Register=Source[Index..Index+=1];
+    Return OK:Destination;
+};

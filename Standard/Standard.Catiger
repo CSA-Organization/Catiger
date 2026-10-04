@@ -1,0 +1,7 @@
+Standard:Directory Domin
+{
+Public
+    -|
+        InputAndOutput:Directory Domin;
+    |-
+};

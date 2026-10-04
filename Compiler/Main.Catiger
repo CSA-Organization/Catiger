@@ -1,0 +1,7 @@
+Import Standard.InputAndOutput.Standard;
+
+Main:Entrance Function(Arguments:char[][])int
+{
+    if(Arguments.Count==1)
+        StandardError("To little Arguments.\nTry to use [help] for more");
+};

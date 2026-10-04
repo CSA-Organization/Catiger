@@ -1,0 +1,10 @@
+Import Standard.Catiger
+
+InputAndOutput:Directory Domin
+{
+Public
+    -|
+        File:File Domin;
+        Standard:File Domin;
+    |-
+};

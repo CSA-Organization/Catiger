@@ -1,0 +1,7 @@
+Import Standard.InputAndOutput.Standard
+
+Main:Entrance Function()int
+{
+    StandardOut("Hello World");
+    return 0;
+};

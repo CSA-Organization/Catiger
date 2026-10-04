@@ -1,0 +1,8 @@
+BuiltIn:Directory Domin
+{
+Public
+    -|
+        BuiltIn:Directory Domin;
+        Core:Directory Domin;
+    |-
+};

@@ -1,0 +1,7 @@
+BuiltIn:Directory Domin
+{
+Public
+    -|
+        x86_64-v4:Directory Domin;
+    |-
+};

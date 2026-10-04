@@ -1,0 +1,8 @@
+Runtime:Directory Domin
+{
+Public
+    -|
+        Linux:Directory Domin;
+        Windows:Directory Domin;
+    |-
+};

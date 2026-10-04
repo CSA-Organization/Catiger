@@ -1,0 +1,18 @@
+Option:Structure<TheType:Type>
+{
+    Flag:General64First Register;
+    Value:TheType;
+    Public 
+};
+
+Result:Structure<TheType:Type,TheErrorCode:Enumeration>
+{
+    Flag:General64First Register;
+    :Union<TheType:Type,TheErrorCode:Enumeration>
+    {
+        TheType:Type;
+        TheErrorCode:Enumeration;
+    }TheValue;
+
+
+};
